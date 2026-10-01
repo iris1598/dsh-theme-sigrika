@@ -1,0 +1,15 @@
+# Bundle patch layer contributed by dsh-theme-warm.
+#
+# One row mounts both halves: the host half registers the /theme-warm media
+# route, and the dsh.client declaration turns the ./client export into a served
+# browser bundle.
+#
+# The bare package name below is correct for the bundle route, where the package
+# is installed under the profile's node_modules and listed in
+# `dsh.profile.bundles`. scripts/install-theme.ps1 does NOT use this file: the
+# local route leaves the package outside the profile and writes its own row into
+# the profile's cordis.patch.yml with a relative path, because the Loader
+# resolves `name` from the profile directory.
+- insert:
+    - id: theme-warm
+      name: 'dsh-theme-warm'

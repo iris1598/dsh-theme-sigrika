@@ -1,0 +1,7 @@
+# Dependencies, if anyone installs this package with npm/pnpm.
+node_modules/
+
+# OS and editor noise.
+.DS_Store
+Thumbs.db
+*.log
