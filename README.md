@@ -38,8 +38,8 @@ lavender-grey notes in the main ornament come from the character art.
 
 ## Install
 
-The theme lives in the `dsh-theme-sigrika/` folder of this repository. Both routes
-below assume you are **inside that folder**.
+This repository **is** the package — `package.json` sits at its root. Clone it
+anywhere and run either route below from the clone's root.
 
 ### Route A — as a bundle (npm, or straight from GitHub)
 
@@ -47,41 +47,37 @@ The package declares `dsh.bundle.patch`, so it installs like any other DSH bundl
 it lands in the profile's `node_modules`, gets listed in `dsh.profile.bundles`, and
 its patch inserts the Loader row.
 
-Because the package sits in a subdirectory, a git install needs pnpm's `#path:`
-parameter — npm cannot install a package from a repository subdirectory.
-
 ```powershell
 cd "$env:USERPROFILE\.dsh\profiles\desktop"
 
 # straight from GitHub, once pushed
-pnpm add "github:<you>/<repo>#path:dsh-theme-sigrika"
+pnpm add "github:<you>/<repo>"
 
 # or from a local clone
-pnpm add "C:\path\to\repo\dsh-theme-sigrika"
+pnpm add "C:\path\to\clone"
 ```
 
 Then add `"dsh-theme-sigrika"` to `dsh.profile.bundles` in that profile's
 `package.json`, or install it from the GUI's **Settings → Plugins** page.
 
-Publishing to npm first makes this simpler for everyone else: `cd dsh-theme-sigrika`,
-`npm publish`, and then it is a plain `pnpm add dsh-theme-sigrika` with no `#path:`.
+Publishing to npm first makes this simpler for everyone else: `npm publish`, and
+then it is a plain `pnpm add dsh-theme-sigrika`.
 
 ### Route B — from a clone, no npm
 
 ```powershell
 # Windows
-cd dsh-theme-sigrika
 pwsh -File install.ps1 -Profile desktop
 ```
 
 ```bash
 # macOS / Linux
-cd dsh-theme-sigrika
 bash install.sh --profile desktop     # or: chmod +x install.sh && ./install.sh
 ```
 
 Both take `--profile` (default `desktop`) and `--uninstall`, and `--dsh-home` /
-`-DshHome` if your config root is not `$DSH_HOME` or `~/.dsh`.
+`-DshHome` if your config root is not `$DSH_HOME` or `~/.dsh`. Run them from the
+repository root — they locate themselves, so the clone can live anywhere.
 
 The script copies the package to `$DSH_HOME/themes/dsh-theme-sigrika/`, writes a
 marker-delimited row into `$DSH_HOME/profiles/<profile>/cordis.patch.yml` (it never
@@ -120,38 +116,29 @@ so disabling it restores the stock look exactly.
 
 ## Repository layout
 
+The repository root **is** the package — clone it, install it, or `npm publish`
+from here directly:
+
 ```
-<repo>/
-├── dsh-theme-sigrika/          <- the installable package
-│   ├── package.json             the plugin manifest: dsh.bundle.patch + dsh.client
-│   ├── cordis.patch.yml         the Loader row this package contributes
-│   ├── lib/index.js             host half  — serves the artwork from media/
-│   ├── lib/client.js            browser half — 44 tokens + the injected artwork rules
-│   ├── media/                   the four delivered WebP images (576 KB total)
-│   ├── install.ps1              Route B installer, Windows
-│   ├── install.sh               Route B installer, macOS / Linux
-│   ├── README.md                this file
-│   └── LICENSE
-├── 主体.png                 <- source artwork, ~14 MB, not needed to run the theme
-├── 侧栏.png
-└── 顶栏装饰.jpg
+package.json         the plugin manifest: dsh.bundle.patch + dsh.client
+cordis.patch.yml     the Loader row this package contributes
+lib/index.js         host half  — serves the artwork from media/
+lib/client.js        browser half — 44 tokens + the injected artwork rules
+media/               the four delivered WebP images (576 KB total)
+install.ps1          Route B installer, Windows
+install.sh           Route B installer, macOS / Linux
+README.md            this file
+LICENSE              MIT for the code, plus the artwork notice
 ```
 
-The three originals are the source the `media/` images were derived from, and they
-are internet-sourced too — see [Artwork notice](#artwork-notice). They are excluded
-from the npm package by the `files` field, but a plain `git add -A` at the
-repository root **will** commit all 14 MB of them. To keep them out, either delete
-them or add a `.gitignore` at the repository root containing:
+The three 8K originals the artwork was derived from are deliberately **not** in this
+repository: they are ~14 MB, nothing needs them at runtime, and the `files` field
+would exclude them from an npm publish anyway.
 
-```gitignore
-主体.png
-侧栏.png
-顶栏装饰.jpg
-```
-
-If you would rather not redistribute the artwork at all, delete the three originals
-**and** replace the four files under `dsh-theme-sigrika/media/` with your own images.
-Nothing in the code depends on the current pictures.
+If you would rather not redistribute the artwork at all, replace the four files
+under `media/` with your own images. Nothing in the code depends on the current
+pictures: keep the four file names, or update the `url(...)` paths in
+`lib/client.js`.
 
 ## How it works
 
