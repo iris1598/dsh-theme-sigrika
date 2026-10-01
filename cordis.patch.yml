@@ -1,6 +1,6 @@
-# Bundle patch layer contributed by dsh-theme-warm.
+# Bundle patch layer contributed by dsh-theme-sigrika.
 #
-# One row mounts both halves: the host half registers the /theme-warm media
+# One row mounts both halves: the host half registers the /theme-sigrika media
 # route, and the dsh.client declaration turns the ./client export into a served
 # browser bundle.
 #
@@ -11,5 +11,5 @@
 # the profile's cordis.patch.yml with a relative path, because the Loader
 # resolves `name` from the profile directory.
 - insert:
-    - id: theme-warm
-      name: 'dsh-theme-warm'
+    - id: theme-sigrika
+      name: 'dsh-theme-sigrika'

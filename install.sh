@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Install (or remove) the dsh-theme-warm theme in a DeepSeek Harness profile.
+# Install (or remove) the dsh-theme-sigrika theme in a DeepSeek Harness profile.
 #
 # Route B of the README: no npm, no publishing. The script copies the package
 # into $DSH_HOME/themes/<name>/ and writes a marker-delimited row into
@@ -29,7 +29,7 @@ DSH_HOME_ARG=""
 
 usage() {
     cat <<'EOF'
-Install the dsh-theme-warm theme into a DeepSeek Harness profile.
+Install the dsh-theme-sigrika theme into a DeepSeek Harness profile.
 
   -p, --profile NAME   profile to install into (default: desktop)
   -u, --uninstall      remove the row and the installed package

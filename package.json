@@ -1,7 +1,7 @@
 {
-  "name": "dsh-theme-warm",
+  "name": "dsh-theme-sigrika",
   "version": "1.0.0",
-  "description": "Warm cream-and-terracotta theme for the DeepSeek Harness Web GUI, with a sidebar texture and a main-area ornament served by the plugin's own host half.",
+  "description": "Warm cream-and-terracotta theme for the DeepSeek Harness Web GUI, built around Sigrika (西格莉卡) from Wuthering Waves: a sidebar texture and a main-area ornament served by the plugin's own host half.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -37,7 +37,9 @@
     "dsh-theme",
     "deepseek-harness",
     "theme",
-    "wallpaper"
+    "wallpaper",
+    "sigrika",
+    "wuthering-waves"
   ],
   "license": "MIT"
 }

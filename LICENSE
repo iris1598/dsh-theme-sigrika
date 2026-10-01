@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 dsh-theme-warm contributors
+Copyright (c) 2026 dsh-theme-sigrika contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,6 +22,31 @@ SOFTWARE.
 
 ---
 
-The artwork under media/ is derived from the author's original images and is
-NOT covered by the MIT grant above. Replace it with your own, or contact the
-author for terms, before redistributing this theme's images.
+ARTWORK NOTICE
+
+The MIT grant above covers the CODE only: lib/, cordis.patch.yml, package.json,
+and the install scripts.
+
+The artwork under media/ depicts the character Sigrika (西格莉卡) from the game
+Wuthering Waves (鸣潮), whose characters and setting are the property of Kuro
+Games (库洛游戏). The image files themselves are NOT original work either: they
+were sourced from the internet, and their individual authorship is unknown.
+
+They are included here for personal, non-commercial use and study only. This
+project claims no rights over the character, the setting, or the images, and it
+is not affiliated with or endorsed by Kuro Games.
+
+If you are a rights holder and want this artwork removed, open an issue on the
+repository and it will be taken down.
+
+If you intend to redistribute this theme, replace the images under media/ with
+your own or with properly licensed ones. Nothing in the code depends on the
+current pictures: keep the four file names, or update the url(...) paths in
+lib/client.js.
+
+图片来源声明：media/ 目录下的图片描绘的是游戏《鸣潮》（Wuthering Waves）中的角色
+「西格莉卡 Sigrika」，该角色及相关设定版权归库洛游戏（Kuro Games）所有。图片文件
+本身亦非原创，来源于网络，作者不详。此处仅用于个人学习、研究与交流，不作任何商业
+用途。本项目不对角色、设定及图片主张任何权利，与库洛游戏无隶属或背书关系。
+如有侵权，请提交 issue 告知，将立即删除。MIT 许可仅覆盖代码部分；如需再分发本主题，
+请自行替换为原创或已获授权的图片。

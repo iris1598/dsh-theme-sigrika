@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Install (or remove) the dsh-theme-warm theme in a DeepSeek Harness profile.
+    Install (or remove) the dsh-theme-sigrika theme in a DeepSeek Harness profile.
 
 .DESCRIPTION
     Route B of the README: no npm, no publishing. The script copies the package
